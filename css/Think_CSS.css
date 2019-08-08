@@ -1,3 +1,10 @@
-.navbar-custom navbar-nav .nav-link .nav-item{
-color: #ffe6cc
+.navbar-custom, navbar-nav, .nav-link, .nav-item{
+color: !important;
+}
+/* Extra small devices (phones, up to 480px) */
+@media screen and (max-width: 767px) {
+    #Header-subtext {
+        font-size: 18px
+    }
+
 }
