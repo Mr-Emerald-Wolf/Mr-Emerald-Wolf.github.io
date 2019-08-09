@@ -4,6 +4,7 @@ color: !important;
 /* Extra small devices (phones, up to 480px) */
 @media screen and (max-width: 767px) {
     #Header-subtext {
+        text-align: left
         font-size: 18px
     }
 
