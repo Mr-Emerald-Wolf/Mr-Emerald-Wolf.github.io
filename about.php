@@ -1,42 +1,17 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <title>About | ThinkYourSelfNow </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/Think_CSS.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="master.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   </head>
   <body>
-   <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-      <a class="navbar-brand font-weight-light" href="#">ThinkYourSelf Now</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ml-auto "><!-- Please apply class to ul from specific bootstrap page to like ml-auto to change horizontal allignment -->
-          <li class="nav-item active">
-            <a class="navbar-custom nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-orange" href="#">Express Yourself</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#">Interact With Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Log In</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <?php echo file_get_contents("navbar.txt"); ?>
     <div class="container min-100 d-flex flex-column"><!-- This container divides the site into different sections or gives max height -->
       <div class="row flex-grow-1">
         <div class="container">
@@ -46,9 +21,9 @@
           <h6 class="p-3 font-weight-light line_space">Whenever we start some work or start a journey, we have some reason behind it. The same case is with us. We all see a lot of injustice and atrocities in our daily life, but we don't do anything about it, also we feel shy to share anything related to those instances of think that these things are useless. Also we do not seek knowledge for its application, the reason why 98% of people seek knowledge is just to get good marks and to get a high paid job.
           So this is the place where we can share all that we want that might help humanity in any possible way. Feel free to seek knowledge and feel free to apply it not just for marks, job or fame, do it for the humanity because,
           </h6>
-        <p class="display-1">HUMANITY IS THE BIGGEST RELIGION.</p>
+          <p class="size">HUMANITY IS THE BIGGEST RELIGION.</p>
         </div>
       </div><!-- About display page -->
     </div>
- </body>
+    </body>
 </html>
