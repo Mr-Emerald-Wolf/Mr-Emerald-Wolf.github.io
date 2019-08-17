@@ -4,9 +4,9 @@
 html, body {
     height: 100%;
 }
-.parallax {
+#parallax {
   /* The image used */
-  background-image: url('img1.jpg');
+  background-image: url('content/image.jpg');
 
   /* Full height */
   min-height: 100%;

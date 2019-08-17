@@ -10,6 +10,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="Parallax/universal-parallax.min.css">
+    <script src="Parallax/universal-parallax.min.js"></script>
+    <script>
+		new universalParallax().init();
+	</script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -38,14 +43,15 @@
         </ul>
       </div>
     </nav>
-    <div class="container min-100 d-flex flex-column"><!-- This container divides the site into different sections or gives max height -->
+    
+    <div class="parallax container-fluid min-100 d-flex flex-column" data-parallax-image ="content/image.jpg"><!-- This container divides the site into different sections or gives max height -->
       <div class="row flex-grow-1">
         <div class="container">
           <div class="jumbotron display-4">
-            <br><br>
-            <p class="text-center">Think YourSelf Now</p>
+            <br><br><br>
+            <p class="text-center text-white">Think YourSelf Now</p>
           </div>
-          <h5 id="Header-subtext" class="text-center font-weight-light line_space">This world is the most beautiful creation. We live in it and we love it as well, but we don't feel it. There are a lot of things to learn, lot of challenges to face and a lot of atrocities to rebel. So let's start this amazing journey together and explore...</h5>
+          <h5 id="Header-subtext text-white" class="text-center font-weight-light line_space">This world is the most beautiful creation. We live in it and we love it as well, but we don't feel it. There are a lot of things to learn, lot of challenges to face and a lot of atrocities to rebel. So let's start this amazing journey together and explore...</h5>
         </div>
       </div><!-- Main display page -->
     </div>

@@ -4,14 +4,14 @@
     <title>About | ThinkYourSelfNow </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="master.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/master.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <?php echo file_get_contents("navbar.txt"); ?>
+    <?php echo file_get_contents("../navbar.html"); ?>
     <div class="container min-100 d-flex flex-column"><!-- This container divides the site into different sections or gives max height -->
       <div class="row flex-grow-1">
         <div class="container">
