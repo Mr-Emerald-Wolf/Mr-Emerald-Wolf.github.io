@@ -11,7 +11,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <?php echo file_get_contents("../navbar.html"); ?>
+    <?php echo file_get_contents("navbar.html"); ?>
     <div class="container min-100 d-flex flex-column"><!-- This container divides the site into different sections or gives max height -->
       <div class="row flex-grow-1">
         <div class="container">
