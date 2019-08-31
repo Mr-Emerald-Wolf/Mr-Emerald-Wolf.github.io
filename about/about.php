@@ -18,10 +18,11 @@
           <div class="jumbotron display-4 mt-3">
             <p class="text-center">About</p>
           </div>
-          <h6 class="p-3 font-weight-light line_space">Whenever we start some work or start a journey, we have some reason behind it. The same case is with us. We all see a lot of injustice and atrocities in our daily life, but we don't do anything about it, also we feel shy to share anything related to those instances of think that these things are useless. Also we do not seek knowledge for its application, the reason why 98% of people seek knowledge is just to get good marks and to get a high paid job.
-          So this is the place where we can share all that we want that might help humanity in any possible way. Feel free to seek knowledge and feel free to apply it not just for marks, job or fame, do it for the humanity because,
+          <h6 class="p-3 font-weight-light line_space">In today’s world affirmative and deep thinking is something that we have stopped practicing; it was this practice which made us humans and separated us from other species. Today the type of thinking that we practice is not deep thinking but rather overthinking this has created a society of unempathetic beings, people who are not able to share their emotions express themselves, they won’t reach out for help and we all know to consequence this leads to...
+          So, we created a platform ‘Think Yourself Now’ where people can share their thoughts, emotions, try to understand each other and be more empathetic, we won’t be able to do these things until we think deeply and encounter out inner conscience. So...
+ 
           </h6>
-          <p class="size">HUMANITY IS THE BIGGEST RELIGION.</p>
+          <p class="size">Think Yourself Now</p>
         </div>
       </div><!-- About display page -->
     </div>
