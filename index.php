@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<?php
+?>
 <html lang="en">
 
   <head>
@@ -46,20 +48,40 @@
     </div>
   </div>
 </div>
-<div class="container min-100 d-flex flex-column">
+<div class="container-fliud min-100 d-flex flex-column">
   <!-- New or Featured posts in our site from forum (express yourself) -->
   <div class="container mt-4 ">
     <h1 class="text-center">Posts</h1>
     <div class="row mt-4">
       <div class="col-sm">
-        <p class="text-center">Post 1</p>
+        <?php
+            require_once('post_config.php');
+                $sql = "SELECT * FROM `express-posts` ORDER BY `express-posts`.`id` DESC LIMIT 1 "; 
+                $result = $conn->query($sql);
+                $row = $result->fetch_assoc();
+                    echo "<p class='text-center'>". $row['name']. "</p>";
+                    echo "<p class='text-center'>". $row['sub_heading']. "</p>";
+                
+        ?>
       </div>
       <div class="col-sm">
-        <p class="text-center">Post 2</p>
-      </div>
+       <?php
+                $sql = "SELECT * FROM `express-posts` ORDER BY `express-posts`.`id` DESC LIMIT 1,1 "; 
+                $result = $conn->query($sql);
+                $row = $result->fetch_assoc();
+                    echo "<p class='text-center'>". $row['name']. "</p>";
+                    echo "<p class='text-center'>". $row['sub_heading']. "</p>";
+          
+        ?>      </div>
       <div class="col-sm">
-        <p class="text-center">Post 3</p>
-      </div>
+        <?php
+            require_once('post_config.php');
+                $sql = "SELECT * FROM `express-posts` ORDER BY `express-posts`.`id` DESC LIMIT 2,1 "; 
+                $result = $conn->query($sql);
+                $row = $result->fetch_assoc();
+                    echo "<p class='text-center'>". $row['name']. "</p>";
+                    echo "<p class='text-center'>". $row['sub_heading']. "</p>";
+        ?>      </div>
     </div>
   </div>
 </div>

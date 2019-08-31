@@ -3,7 +3,7 @@
 server with default setting (user 'root' with no password) */
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'pi');
-define('DB_PASSWORD', 'mysqlpass');
+define('DB_PASSWORD', 'TDR4 bfury');
 define('DB_NAME', 'Think_BlogPosts');
  
 /* Attempt to connect to MySQL database */
