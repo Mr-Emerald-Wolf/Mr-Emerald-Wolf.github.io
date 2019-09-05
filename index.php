@@ -34,11 +34,9 @@
 <div class="container-fluid min-100 d-flex flex-column">
   <!-- New or Featured posts in our site from forum (express yourself) -->
   <div class="container mt-4 ">
-    <div class="row mt-2">
+    <div class="row row-eq-height mt-2">
       <div class="col-sm">
         <div class="container bg-dark">
-
-
         </div>
       </div>
       <div class="col-sm">
@@ -51,37 +49,56 @@
 <div class="container-fliud min-100 d-flex flex-column">
   <!-- New or Featured posts in our site from forum (express yourself) -->
   <div class="container mt-4 ">
-    <h1 class="text-center">Posts</h1>
-    <div class="row mt-4">
-      <div class="col-sm">
-        <?php
-            require_once('post_config.php');
+    <h1 class="text-center display-4 mb-4">Posts</h1><br>
+    <div class="row w-100 mt-4">
+        <div class="card-deck mr-4 ml-4">
+  <div class="h-100 d-inline-flex card card-wrap">
+    <?php
+                require_once('post_config.php');
                 $sql = "SELECT * FROM `express-posts` ORDER BY `express-posts`.`id` DESC LIMIT 1 "; 
                 $result = $conn->query($sql);
                 $row = $result->fetch_assoc();
-                    echo "<p class='text-center'>". $row['name']. "</p>";
-                    echo "<p class='text-center'>". $row['sub_heading']. "</p>";
-                
-        ?>
-      </div>
-      <div class="col-sm">
-       <?php
+      
+      echo "<img src=' " .$row['img1'] . "' class='card-img-top rounded
+      alt='Responsive image''>";                 
+      echo '<div class="card-body">';
+      echo '<h5 class="card-title">'. $row['name']. '</h5>';
+      echo '<p class="card-text truncate">'. $row['sub_heading']. '</p>';
+      echo '</div>';
+                ?>
+  </div>
+  <div class="card h-100">
+   <?php
+                require_once('post_config.php');
                 $sql = "SELECT * FROM `express-posts` ORDER BY `express-posts`.`id` DESC LIMIT 1,1 "; 
                 $result = $conn->query($sql);
                 $row = $result->fetch_assoc();
-                    echo "<p class='text-center'>". $row['name']. "</p>";
-                    echo "<p class='text-center'>". $row['sub_heading']. "</p>";
-          
-        ?>      </div>
-      <div class="col-sm">
-        <?php
-            require_once('post_config.php');
+      
+      echo "<img src=' " .$row['img1'] . "' class='card-img-top rounded
+      alt='Responsive image''>";                 
+      echo '<div class="card-body">';
+      echo '<h5 class="card-title">'. $row['name']. '</h5>';
+      echo '<p class="card-text truncate">'. $row['sub_heading']. '</p>';
+      echo '</div>';
+                ?>
+  </div>
+  <div class="card h-100">
+      <?php
+                require_once('post_config.php');
                 $sql = "SELECT * FROM `express-posts` ORDER BY `express-posts`.`id` DESC LIMIT 2,1 "; 
                 $result = $conn->query($sql);
                 $row = $result->fetch_assoc();
-                    echo "<p class='text-center'>". $row['name']. "</p>";
-                    echo "<p class='text-center'>". $row['sub_heading']. "</p>";
-        ?>      </div>
+      
+      echo "<img src=' " .$row['img1'] . "' class='card-img-top rounded
+      alt='Responsive image''>";                 
+      echo '<div class="card-body">';
+      echo '<h5 class="card-title">'. $row['name']. '</h5>';
+      echo '<p class="card-text truncate">'. $row['sub_heading']. '</p>';
+      echo '</div>';
+                ?>
+  </div>
+</div> 
+      
     </div>
   </div>
 </div>

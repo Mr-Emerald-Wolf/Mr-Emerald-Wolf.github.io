@@ -1,7 +1,7 @@
 <?php
     $servername = "localhost";
     $username = "pi";
-    $password = "TDR4fury";
+    $password = "mysqlpass";
     $dbname = "Think_BlogPosts";
 
     // Create connection

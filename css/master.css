@@ -4,17 +4,11 @@
 html, body {
     height: 100%;
 }
-#parallax {
-  /* The image used */
-  background-image: url('content/image.jpg');
-
-  /* Full height */
-  min-height: 100%;
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.truncate {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;  
 }
 .min-100 {
     min-height: 100%;
@@ -22,6 +16,7 @@ html, body {
 .line_space {
     line-height: 2;
 }
+
 @media screen and (max-width: 767px) {
     .size {
         font-size: 55px;
@@ -29,5 +24,13 @@ html, body {
     .line_space {
         line-height: 2;
         font-size: 5vw;
+        
     }
+}
+@media screen and (min-width: 767px) {
+   .card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+} 
 }
