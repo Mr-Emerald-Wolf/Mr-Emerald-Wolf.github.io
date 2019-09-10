@@ -18,6 +18,12 @@ html, body {
 }
 
 @media screen and (max-width: 767px) {
+    .truncate {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    }
     .size {
         font-size: 55px;
     }
