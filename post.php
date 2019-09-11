@@ -15,6 +15,7 @@
     if(isset($_GET['id'])){
         $path = $_GET['id'];
         echo file_get_contents("navbar.html");
+        echo "Sup";
 
   
 } else {
