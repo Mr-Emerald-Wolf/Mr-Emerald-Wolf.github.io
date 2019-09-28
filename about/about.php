@@ -22,7 +22,7 @@
           So, we created a platform ‘Think Yourself Now’ where people can share their thoughts, emotions, try to understand each other and be more empathetic, we won’t be able to do these things until we think deeply and encounter out inner conscience. So...
  
           </h6>
-          <p class="size">Think Yourself Now</p>
+          <p class=" text-weight-heavy display-3">Think Yourself Now</p>
         </div>
       </div><!-- About display page -->
     </div>
