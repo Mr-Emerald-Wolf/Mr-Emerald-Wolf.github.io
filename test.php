@@ -1,7 +1,8 @@
 <!---Use this as a testing ground to set up new resources--->
 <html lang="en">
-<head>
-<?php echo "<title>". $row['name']. " | ThinkYourSelfNow </title>"; ?>
+
+  <head>
+    <?php echo "<title>". $row['name']. " | ThinkYourSelfNow </title>"; ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/master.css">
@@ -11,12 +12,22 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <?php require_once('post_config.php'); ?>
   </head>
-    <body>
+
+  <body>
+    <div class="container">
+      <p>
         <script>
-            xhttp = new XMLHttpRequest();    
+          xhttp = new XMLHttpRequest();
+          xhttp.open("GET", "test.php", true);
+          xhttp.send();
+
         </script>
-        <div class="row ml-auto ">
-            <p class="display-4">Hello</p>
-        </div>
-    </body>
+      </p>
+    </div>
+    <div class="container ml-auto ">
+      <p class="display-4">Hello</p>
+    </div>
+  </body>
+
 </html>
+
