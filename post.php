@@ -77,7 +77,7 @@
               <div class="form-group">
                 <textarea class="form-control" rows="3"></textarea>
               </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>
           </div>
         </div>
