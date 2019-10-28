@@ -15,7 +15,7 @@
         <script>
             xhttp = new XMLHttpRequest();    
         </script>
-        <div class="row">
+        <div class="row ml-auto ">
             <p class="display-4">Hello</p>
         </div>
     </body>
