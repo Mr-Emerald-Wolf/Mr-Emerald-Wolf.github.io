@@ -12,6 +12,11 @@
     <?php require_once('post_config.php'); ?>
   </head>
     <body>
-        <p class="display-4">Hello</p>
+        <script>
+            xhttp = new XMLHttpRequest();    
+        </script>
+        <div class="row">
+            <p class="display-4">Hello</p>
+        </div>
     </body>
 </html>
