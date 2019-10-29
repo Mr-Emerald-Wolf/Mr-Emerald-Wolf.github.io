@@ -15,14 +15,17 @@
 
   <body>
     <div class="container">
-      <p>
         <script>
-          xhttp = new XMLHttpRequest();
-          xhttp.open("GET", "test.php", true);
-          xhttp.send();
-
+            function loadDoc() {
+                xhttp = new XMLHttpRequest();
+                xhttp.open("GET", "test.php", true);
+                xhttp.send();
+                document.getElementById("demo").innerHTML = this.responseText;
+            }
         </script>
-      </p>
+        <p id="demo"></p>
+        <button type="button" onclick="loadDoc()">Request data</button>
+
     </div>
     <div class="container ml-auto ">
       <p class="display-4">Hello</p>
