@@ -16,9 +16,15 @@
   <body>
     <div class="container">
         <script>
+            function rdm_page() {
+                page = ""
+                if (page == "about.php") {
+                    page = "index.php"
+                }
+            }
             function loadDoc() {
                 xhttp = new XMLHttpRequest();
-                xhttp.open("GET", "index.php", true);
+                xhttp.open("GET", page, true);
                 xhttp.send();
                 xhttp.onreadystatechange = function() {
                 if (xhttp.readyState == 4) {
