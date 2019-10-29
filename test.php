@@ -28,12 +28,12 @@
                 xhttp.send();
                 xhttp.onreadystatechange = function() {
                 if (xhttp.readyState == 4) {
-                    document.getElementById("demo").innerHTML = this.responseText;
+                    echo this.responseText; 
                     }    
                 };
             }
         </script>
-        <p id="demo"></p>
+        <p id></p>
         <button type="button" onclick="loadDoc()">Request data</button>
         <button type="button" onclick="rdm_page()">Change data</button>
 
