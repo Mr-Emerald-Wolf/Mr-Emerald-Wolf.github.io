@@ -16,12 +16,12 @@
   <body>
     <div class="container">
         <script>
+            page = "about.php";
             function rdm_page() {
-                page = ""
                 if (page == "about.php") {
-                    page = "index.php"
-                }
-            }
+                    page = "index.php";
+                };
+            };
             function loadDoc() {
                 xhttp = new XMLHttpRequest();
                 xhttp.open("GET", page, true);
@@ -30,12 +30,12 @@
                 if (xhttp.readyState == 4) {
                     document.getElementById("demo").innerHTML = this.responseText;
                     }    
-                }
+                };
             }
         </script>
         <p id="demo"></p>
         <button type="button" onclick="loadDoc()">Request data</button>
-        <button type="button" onclick="loadDoc()">Request data</button>
+        <button type="button" onclick="rdm_page()">Change data</button>
 
     </div>
     <div class="container ml-auto ">
