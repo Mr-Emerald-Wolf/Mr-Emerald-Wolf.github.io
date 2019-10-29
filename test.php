@@ -16,9 +16,9 @@
   <body>
     <div class="container">
         <script>
-            page = "about.php";
+            page = "about/about.php";
             function rdm_page() {
-                if (page == "about.php") {
+                if (page == "about/about.php") {
                     page = "index.php";
                 };
             };
