@@ -18,7 +18,7 @@
         <script>
             function loadDoc() {
                 xhttp = new XMLHttpRequest();
-                xhttp.open("GET", "test.php", true);
+                xhttp.open("GET", "index.php", true);
                 xhttp.send();
                 xhttp.onreadystatechange = function() {
                 if (xhttp.readyState == 4) {
