@@ -20,7 +20,11 @@
                 xhttp = new XMLHttpRequest();
                 xhttp.open("GET", "test.php", true);
                 xhttp.send();
-                document.getElementById("demo").innerHTML = this.responseText;
+                xhttp.onreadystatechange = function() {
+                if (xhttp.readyState == 4) {
+                    document.getElementById("demo").innerHTML = this.responseText;
+                    }    
+                }
             }
         </script>
         <p id="demo"></p>
