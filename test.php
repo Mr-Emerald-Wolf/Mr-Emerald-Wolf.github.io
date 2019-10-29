@@ -35,6 +35,7 @@
         </script>
         <p id="demo"></p>
         <button type="button" onclick="loadDoc()">Request data</button>
+        <button type="button" onclick="loadDoc()">Request data</button>
 
     </div>
     <div class="container ml-auto ">
