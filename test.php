@@ -14,32 +14,40 @@
   </head>
 
   <body>
-    <div class="container">
-        <script>
-            page = "about/about.php";
-            function rdm_page() {
-                if (page == "about/about.php") {
-                    page = "index.php";
-                };
-            };
-            function loadDoc() {
-                xhttp = new XMLHttpRequest();
-                xhttp.open("GET", page, true);
-                xhttp.send();
-                xhttp.onreadystatechange = function() {
-                if (xhttp.readyState == 4) {
-                    document.getElementById("demo").innerHTML = this.responseText;
-                    }    
-                };
-            }
-        </script>
-        <div id="demo"></div>
-        <button type="button" onclick="loadDoc()">Request data</button>
-        <button type="button" onclick="rdm_page()">Change data</button>
+    <script>
+      function loadDoc() {
+        var xhttp = new XMLHttpRequest();
+        var str = document.getElementById("commentBox").value;
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("demo").innerHTML = this.responseText;
+          }
+        };
+        xhttp.open("GET", "test2.php?q=" + str, true);
+        xhttp.send();
+      };
 
+    </script>
+    <div class="container mt-4 pt-4">
+      <div class="row">
+        <div class="col-lg-8">
+        <div class="container">
+          <div class="row mt-4 ">
+          </div>
+        </div>
+        <div class="card my-4">
+          <h5 class="card-header">Leave a Comment:</h5>
+          <div class="card-body">
+              <div class="form-group">
+                <textarea id="commentBox" class="form-control mb-2" rows="3"></textarea>
+              </div>
+              <button onclick="loadDoc()" type="submit" class="btn btn-primary mt-2">Submit</button>
+          </div>
+        </div>
+        <div class="mt-3 container" id="demo">
+        </div>
+      </div>
     </div>
-    <div class="container ml-auto ">
-      <p class="display-4">Hello</p>
     </div>
   </body>
 
