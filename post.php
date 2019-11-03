@@ -70,7 +70,7 @@
         <hr>
         <div>
         <!-- Comments Form -->
-        <?php echo file_get_contents("remarks.php");?>
+        <?php echo file_get_contents("dispComments.php");?>
         <!-- Single Comment -->
         
 
