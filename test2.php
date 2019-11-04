@@ -18,11 +18,11 @@
         <?php 
         
         $postId = 12345678;
-        $charVal = $_GET['q'];
+        $addVal = $_GET['q'];
         
         #Connect users here with cookies
         
-        $sql = "INSERT INTO comments (postId, charVal) VALUES ($postId,'$charVal')";
+        $sql = "INSERT INTO comments (postId, charVal) VALUES ($postId,'$addVal')";
         
         if (mysqli_query($conn, $sql)) {
         echo '<div class="alert alert-primary alert-dismissible fade show" role="alert"> Comment Was Added Succesfully!  

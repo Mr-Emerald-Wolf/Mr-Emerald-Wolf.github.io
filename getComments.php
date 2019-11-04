@@ -24,11 +24,16 @@
         $charVal = $row['charVal'];
         echo "<div class='media mb-4'>        
                 <div class='media-body'>
-                    <h5 class='mt-0'>$user</h5>
+                    <h5 class='mt-0'>$x
+                    </h5>
                     <p>$charVal</p>
                 </div>
               </div>";
     }
+     
+    
+              
 ?>
+
     
 </html>
