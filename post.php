@@ -28,42 +28,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <div id="dom-target" style="display: none;">
-</div>
-<script>
-var postId = <?php echo $postId; ?>;
-
-function getComments() {
-
-  var xhttp1 = new XMLHttpRequest();
-
-  xhttp1.onreadystatechange = function() {
-    if (this.readyState === 4 && this.status === 200) {
-      document.getElementById("commentsForm").innerHTML = this.responseText;
-    }
-  };
-  xhttp1.open("GET", "getComments.php?q=" + postId, true);
-  xhttp1.send();
-}
-
-function addComments() {
-  var xhttp = new XMLHttpRequest();
-  var str = document.getElementById("commentBox").value;
-
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("alert").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "addComments.php?val=" + str + "&id="+ postId, true);
-  xhttp.send();
-}
-
-getComments();
-
-                    
-    
-</script>
+    <div id="dom-target" style="display: none;"></div>
+    <script>var postId = <?php echo $postId; ?>;</script>
+    <script src="loadComments.js"></script>
   </head>
  <body>
         
@@ -121,16 +88,14 @@ getComments();
               <div class="form-group">
                 <textarea id="commentBox" class="form-control mb-2" rows="3"></textarea>
               </div>
-              <button onclick="addComments(),getComments()" type="submit" class="btn btn-primary mt-2">Submit</button>
+              <button onclick="addComments(),loadComments(1)" type="submit" class="btn btn-primary mt-2">Submit</button>
           </div>
         </div>
         <div class="mt-3 container" id="alert">
         </div>
         <div id="commentsForm"></div>
-        <!-- Single Comment -->
-        
-
-        
+        <button class="btn btn-primary mt-2" onclick="loadComments(5)">Load More</button>
+        <!-- Single Comment -->  
       </div>
       </div>
 
@@ -200,5 +165,6 @@ getComments();
 
   </div>
   <!-- /.container -->
+     <?php echo file_get_contents("footer.html"); ?>
     </body>
 </html>
