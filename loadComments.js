@@ -2,6 +2,8 @@
 
 function addComments() {
   var xhttp = new XMLHttpRequest();
+  var date = new Date(); 
+  date = date.toDateString();
   var str = document.getElementById("commentBox").value;
 
   xhttp.onreadystatechange = function() {
@@ -9,12 +11,12 @@ function addComments() {
       document.getElementById("alert").innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "addComments.php?val=" + str + "&id="+ postId, true);
+  xhttp.open("GET", "addComments.php?val=" + str + "&id="+ postId + "&date=" + date, true);
   xhttp.send();
   document.getElementById("commentBox").value = "";
 }
 
-var x = 0; //Tells number of comments to be loaded.
+var x = 0; //Tells number of comments to be loaded.ßß
 function loadComments(y) {
     var xhttp1 = new XMLHttpRequest();
     x += y; // 'y' comments more are loaded. 5 for default.

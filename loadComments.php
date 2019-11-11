@@ -40,16 +40,17 @@
                     $row = mysqli_fetch_assoc($result);
                     
                     $charVal = $row['charVal'];
+                    $date = $row['date'];
                 } else {
                 
                     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
                 }   
                 
                 
-                echo '<div class="media mt-2 p-2 ">
-                        
+                echo '<div class="media mt-2 p ">
                             <p class="font-weight-bold">User '. $a. '</p>
                             ' . $charVal . '
+                            <p class = "font-weight-light">' .$date . '</p>
                         </div>
                     </div>';
             }

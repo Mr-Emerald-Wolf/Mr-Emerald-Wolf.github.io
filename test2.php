@@ -12,79 +12,103 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
    <?php require_once('post_config.php'); ?>
     <script>
-        var x = 4;
-    function loadMore() {
+        var x = 0;
+    function loadPosts(y) {
 
       var xhttp1 = new XMLHttpRequest();
-      x += 5;
-      var postId = 12345678;
+      x += y;
 
       xhttp1.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
-          document.getElementById("commentsForm").innerHTML = this.responseText;
+          document.getElementById("posts-container").innerHTML = this.responseText;
         }
       };
-      xhttp1.open("GET", "test2.php?q=" + x + "&id="+ postId, true);
+      xhttp1.open("GET", "test2.php?q=" + x , true);
       xhttp1.send();
+      
     }
-
+    loadPosts(3);
     </script>
     </head>
     
-    <body>
-        <p id="commentsForm"></p>
-        <button class="btn btn-primary mt-2" onclick="loadMore()">Load More</button>
+    <?php
+        class Template {
+    	/**
+    	 * The filename of the template to load.
+    	 *
+    	 * @access protected
+    	 * @var string
+    	 */
+        protected $file;
         
-        <?php 
-    
-        $x = $_GET['q'];
+        /**
+         * An array of values for replacing each tag on the template (the key for each value is its corresponding tag).
+         *
+         * @access protected
+         * @var array
+         */
+        protected $values = array();
         
-        echo $postId;
-        $postId = $_GET['id'];
-        #Connect users here with cookies
+        /**
+         * Creates a new Template object and sets its associated file.
+         *
+         * @param string $file the filename of the template to load
+         */
+        public function __construct($file) {
+            $this->file = $file;
+        }
         
-        $sql = "SELECT COUNT(id) FROM comments";
+        /**
+         * Sets a value for replacing a specific tag.
+         *
+         * @param string $key the name of the tag to replace
+         * @param string $value the value to replace
+         */
+        public function set($key, $value) {
+            $this->values[$key] = $value;
+        }
         
-        if (mysqli_query($conn, $sql)) {
-            $result = mysqli_query($conn, $sql);
-            $row = mysqli_fetch_assoc($result);
-            $y = $row['COUNT(id)'];
+        /**
+         * Outputs the content of the template, replacing the keys for its respective values.
+         *
+         * @return string
+         */
+        public function output() {
+        	/**
+            * Tries to verify if the file exists.
+        	 * If it doesn't return with an error message.
+        	 * Anything else loads the file contents and loops through the array replacing every key for its value.
+        	 */
+            if (!file_exists($this->file)) {
+            	return "Error loading template file ($this->file).<br />";
+            }
+            $output = file_get_contents($this->file);
             
-        ;
-        } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-        }   
-        
-        
-        
-        if ($y >= 4) {
-            $y = 4;
-        } 
-        
- 
-        if ($x >= $y) {
-            for ($a = 0; $a <= $x; $a++) {
-                require_once('post_config.php');
-                
-                echo $postId;
-                $sql = "SELECT * FROM `comments` WHERE postId = '$postId' ORDER BY `comments`.`id` DESC LIMIT ". $a. ",1"; 
-                echo $sql;
-                $result = $conn->query($sql);
-                $row = $result->fetch_assoc();
-                $user = $row['user'];
-                $charVal = $row['charVal'];
-                echo "<div class='media mb-4'>        
-                        <div class='media-body'>
-                            <h5 class='mt-0'>$a
-                            </h5>
-                            <p>$charVal</p>
-                        </div>
-                      </div>";
-        }
+            foreach ($this->values as $key => $value) {
+            	$tagToReplace = "[@$key]";
+            	$output = str_replace($tagToReplace, $value, $output);
+            }
+
+            return $output;
         }
         
-                ?>
+        /**
+         * Merges the content from an array of templates and separates it with $separator.
+         *
+         * @param array $templates an array of Template objects to merge
+         * @param string $separator the string that is used between each Template object
+         * @return string
+         */
         
-    </body>
+    }
+     
+        $post = new Template("test.tpl");
+        $post->set("img1", "content/img2.jpg");
+        $post->set("name", "Sup");
+        $post->set("sub_heading", "Yo");
+        
+  
+echo $post->output();
     
-</html>
+        ?>
+    

@@ -32,16 +32,9 @@
     <script>var postId = <?php echo $postId; ?>;</script>
     <script src="loadComments.js"></script>
   </head>
- <body>
+ <body>     
         
-        
-        
-    
-        
-        
-<?php 
-    echo file_get_contents("navbar.html");  
-        ?>
+<?php echo file_get_contents("navbar.html");  ?>
 
      <!-- Page Content -->
   <div class="container mt-4 pt-4">
@@ -88,13 +81,13 @@
               <div class="form-group">
                 <textarea id="commentBox" class="form-control mb-2" rows="3"></textarea>
               </div>
-              <button onclick="addComments(),loadComments(1)" type="submit" class="btn btn-primary mt-2">Submit</button>
+              <button onclick="addComments(),loadComments(1)" type="submit" class="btn btn-light border mt-2">Submit</button>
           </div>
         </div>
         <div class="mt-3 container" id="alert">
         </div>
         <div id="commentsForm"></div>
-        <button class="btn btn-primary mt-2" onclick="loadComments(5)">Load More</button>
+        <button class="btn btn-light border mt-2" onclick="loadComments(5)">Load More</button>
         <!-- Single Comment -->  
       </div>
       </div>
