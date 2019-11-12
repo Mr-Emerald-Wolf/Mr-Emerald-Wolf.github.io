@@ -24,6 +24,7 @@
                     $output = str_replace($tagToReplace, $value, $output);
                 }
             return $output;
+            
         }
     }
 
