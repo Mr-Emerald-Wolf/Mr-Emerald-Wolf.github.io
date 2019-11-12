@@ -32,7 +32,7 @@
     </head>
     
     <?php
-        class Template {
+        class Template_1 {
     	/**
     	 * The filename of the template to load.
     	 *
@@ -101,14 +101,32 @@
          */
         
     }
-     
-        $post = new Template("test.tpl");
-        $post->set("img1", "content/img2.jpg");
-        $post->set("name", "Sup");
-        $post->set("sub_heading", "Yo");
+       
+    echo '  <div class="container">';
+     echo"<div class='row'>";
+        for ($x = 0; $x <= 2; $x++) { 
+            
+            
         
-  
-echo $post->output();
+            require_once('post_config.php');
+            require_once('templateEngine.php');
+            $sql = "SELECT * FROM `express-posts` ORDER BY `express-posts`.`id` DESC LIMIT ". $x. ",1"; 
+                $result = $conn->query($sql);
+                $row = $result->fetch_assoc();
+                $path = $row['path'];
+            
+            
+            $post = new Template("posts.tpl");
+            $post->set("img1", $row['img1']);
+            $post->set("name", $row['path']);
+            $post->set("sub_heading", $row['sub_heading']);
+                
+                echo $post->output();
+        
+        }
+        echo "</div>";
+        echo '</div>';
+
     
         ?>
     

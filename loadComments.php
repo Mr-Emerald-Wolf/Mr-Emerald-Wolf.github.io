@@ -31,7 +31,7 @@
         if ($x >= $y) {
             for ($a = 0; $a <= $x; $a++) {
                 
-                $sql = "SELECT * FROM comments WHERE postId = '$postId' ORDER BY `comments`.`id` DESC LIMIT ". $a. ",1"; ;
+                $sql = "SELECT * FROM comments WHERE postId = '$postId' ORDER BY `comments`.`id` DESC LIMIT ". $a. ",1"; 
                 
                 
                 if (mysqli_query($conn, $sql)) {
