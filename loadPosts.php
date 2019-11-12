@@ -1,7 +1,7 @@
 <?php
 
     require_once('post_config.php');
-    require_once('templateEngine.php');
+    require_once('TemplateEngine/templateEngine.php');
 
     $x = $_GET['q'];
     
@@ -21,7 +21,7 @@
                 
                 }  
         
-        $post = new Template("posts.tpl");
+        $post = new Template("TemplateEngine/Templates/posts.tpl");
         $post->set("img1", $row['img1']);
         $post->set("name", $row['name']);
         $post->set("sub_heading", $row['sub_heading']);
