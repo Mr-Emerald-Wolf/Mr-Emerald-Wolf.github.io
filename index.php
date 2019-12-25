@@ -55,11 +55,12 @@
           <div class="row w-100 mt-4 mx-auto" id="postsContainer">
          
             
-            <div class="col text-center">
-              <button class="btn btn-light p-4 px-4 bg-white border" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Load More</button>
+           
+          </div>
+             <div class="col text-center">
+              <button class="btn btn-light p-4 px-4 bg-white border" type="button" onclick="loadPosts(3)">Load More</button>
             </div>
 
-          </div>
         </div>
       </div>
     </div>
