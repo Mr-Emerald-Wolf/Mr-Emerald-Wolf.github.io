@@ -1,18 +1,23 @@
-<?php
-$servername = "localhost";
-$username = "pi";
-$password = "TDR4fury";
-$DATABASE_NAME = 'Think_BlogPosts';
-// Create connection
-$conn = new mysqli($servername, $username, $password, $DATABASE_NAME);
+<?php 
+        // Initialize the session
+        session_start();    
+        require_once("../post_config.php");        
+         
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-echo "Connected successfully";
-// Now we check if the data from the login form was submitted, isset() will check if the data exists.
-if ( !isset($_POST['username'], $_POST['password'],) ) {
-	// Could not get the data that should have been sent.
-	die ('Please fill both the username and password field!');
-}
+         $user=$_POST['user'];
+         $pass=$_POST['pass'];
+
+         $sql="select * from users where username='$user'";
+
+        if (mysqli_query($conn, $sql)) {
+            $result = mysqli_query($conn, $sql);
+            $row = mysqli_fetch_assoc($result);
+             
+            if (password_verify($pass, $row['password'])) {
+                echo '1';
+                $_SESSION['user']=$user;
+            } else {
+                echo 'Email Or Password Do Not Match';
+            }
+         } 
+?>
