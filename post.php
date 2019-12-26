@@ -1,42 +1,38 @@
 <!DOCTYPE html>
 <?php
-        
-    function clean($string) {
-    $string = str_replace(' ', '-', $string); // Replaces all spaces with hyphens.
 
-    return preg_replace('/[^A-Za-z0-9\-]/', '', $string); // Removes special chars.
-}
-    if(isset($_GET['id'])){
+
+if(isset($_GET['id'])){
+        require_once('post_config.php'); //It includes clean function.
         $path = clean(trim($_GET['id']));
-        require_once('post_config.php');
         $sql = "SELECT * FROM `express-posts` WHERE '$path' = path ";
         $result = $conn->query($sql);
         $row = $result->fetch_assoc(); 
         $postId = $row['postId'];
         
-} else {
-  echo "failed";
-}
-        ?>
+      } else {
+        echo "failed";
+      }
+      ?>
 <html lang="en">
 <head>
-<?php echo "<title>". $row['name']. " | ThinkYourSelfNow </title>"; ?>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/master.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <div id="dom-target" style="display: none;"></div>
-    <script>var postId = <?php echo $postId; ?>;</script>
-    <script src="loadComments.js"></script>
-  </head>
- <body>     
-        
-<?php echo file_get_contents("navbar.html");  ?>
+  <?php echo "<title>". $row['name']. " | ThinkYourSelfNow </title>"; ?>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/master.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <div id="dom-target" style="display: none;"></div>
+  <script>var postId = <?php echo $postId; ?>;</script>
+  <script src="libs/loadComments.js"></script>
+</head>
+<body>     
+  
+  <?php echo file_get_contents("navbar.html");  ?>
 
-     <!-- Page Content -->
+  <!-- Page Content -->
   <div class="container mt-4 pt-4">
 
     <div class="row">
@@ -49,7 +45,7 @@
         
         <!-- Sub Heading -->
         <p class="text-left lead mt-2 pt-2">
-        <?php echo $row['sub_heading']; ?>
+          <?php echo $row['sub_heading']; ?>
         </p>
 
         <!-- Author -->
@@ -66,30 +62,30 @@
         <!-- Preview Image -->
         <img class="img-fluid rounded" src="<?php echo $row['img1']; ?>" alt="">
 
-     
+        
 
         <!-- Post Content -->
         <p class="lead"><?php echo $row['post_content']; 
-            $postId = $row['postId']; ?></p>
-    
+        $postId = $row['postId']; ?></p>
+        
         <hr>
         <div>
-        <!-- Comments Form -->
-        <div class="card my-4">
-          <h5 class="card-header">Leave a Comment:</h5>
-          <div class="card-body">
+          <!-- Comments Form -->
+          <div class="card my-4">
+            <h5 class="card-header">Leave a Comment:</h5>
+            <div class="card-body">
               <div class="form-group">
                 <textarea id="commentBox" class="form-control mb-2" rows="3"></textarea>
               </div>
               <button onclick="addComments(),loadComments(1)" type="submit" class="btn btn-light border mt-2">Submit</button>
+            </div>
           </div>
+          <div class="mt-3 container" id="alert">
+          </div>
+          <div id="commentsForm"></div>
+          <button class="btn btn-light border mt-2" onclick="loadComments(5)">Load More</button>
+          <!-- Single Comment -->  
         </div>
-        <div class="mt-3 container" id="alert">
-        </div>
-        <div id="commentsForm"></div>
-        <button class="btn btn-light border mt-2" onclick="loadComments(5)">Load More</button>
-        <!-- Single Comment -->  
-      </div>
       </div>
 
       <!-- Sidebar Widgets Column -->
@@ -158,6 +154,6 @@
 
   </div>
   <!-- /.container -->
-     <?php echo file_get_contents("footer.html"); ?>
-    </body>
+  <?php echo file_get_contents("footer.html"); ?>
+</body>
 </html>

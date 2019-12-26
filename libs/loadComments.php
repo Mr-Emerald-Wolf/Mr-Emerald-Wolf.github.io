@@ -1,6 +1,6 @@
 <?php 
-        require_once('post_config.php');
-        require_once('TemplateEngine/templateEngine.php');
+        require_once('../post_config.php');
+        require_once('../TemplateEngine/templateEngine.php');
         $x = $_GET['q'];
         $postId = $_GET['id'];
     
@@ -41,14 +41,16 @@
                     
                     $charVal = $row['charVal'];
                     $date = $row['date'];
+                    $user = $row['user'];
                 } else {
                 
                     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
                 }   
-                $post = new Template("TemplateEngine/Templates/comments.tpl");
+                $post = new Template("../TemplateEngine/Templates/comments.tpl");
                 $post->set("a", $a);
                 $post->set("charVal", $charVal);
                 $post->set("date", $date);
+                $post->set("user", $user);
                     echo $post->output();
             }
         }

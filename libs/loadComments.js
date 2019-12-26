@@ -11,7 +11,7 @@ function addComments() {
       document.getElementById("alert").innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "addComments.php?val=" + str + "&id="+ postId + "&date=" + date, true);
+  xhttp.open("GET", "libs/addComments.php?val=" + str + "&id="+ postId + "&date=" + date, true);
   xhttp.send();
   document.getElementById("commentBox").value = "";
 }
@@ -26,7 +26,7 @@ function loadComments(y) {
       document.getElementById("commentsForm").innerHTML = this.responseText; //Returns the comments in the form of html.
     }
     };
-    xhttp1.open("GET", "loadComments.php?q=" + x +"&id=" + postId, true); //Sends postId and number of comments to be loaded.
+    xhttp1.open("GET", "libs/loadComments.php?q=" + x +"&id=" + postId, true); //Sends postId and number of comments to be loaded.
     xhttp1.send();
     }
 loadComments(5);

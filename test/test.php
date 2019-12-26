@@ -21,7 +21,7 @@
 
         if( username != "" && password != "" ){
             $.ajax({
-                url:'test2.php',
+                url:'../test/test2.php',
                 type:'post',
                 data:{user:username,pass:password},
                 success:function(response){
